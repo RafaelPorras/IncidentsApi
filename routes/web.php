@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/incidents','IncidentController@index');
+$router->post('/incidents','IncidentController@store');
+$router->get('/incidents/{incident}','IncidentController@show');
+$router->put('/incidents/{incident}','IncidentController@update');
+$router->patch('/incidents/{incident}','IncidentController@update');
+$router->delete('/incidents/{incident}','IncidentController@destroy');
